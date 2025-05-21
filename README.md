@@ -9,6 +9,10 @@ May 28th, 2025
 - Bartłomiej Błoniarz [@BBloniarz_](https://x.com/BBloniarz_)
 - Tomasz Zawadzki [@tomekzaw](https://twitter.com/tomekzaw_)
 
+## Important!
+
+If you are reading this before attending the workshops, please **complete** the setup, and **build** both apps on your computer. We want to avoid all attendees downloading everything at the same time in the venue.
+
 ## Setup
 
 ```sh
