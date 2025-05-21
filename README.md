@@ -15,7 +15,7 @@ May 28th, 2025
 git clone https://github.com/software-mansion-labs/appjs-2025-workshop-performance
 yarn
 cd ios && bundle install && bundle exec pod install && cd ..
-open ios/AppJS.xcworkspace
+open ios/MyApp.xcworkspace
 open -a "Android Studio" android
 yarn start
 ```
