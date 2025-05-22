@@ -51,6 +51,8 @@ const LegendListExample = () => {
       // Recommended props (Improves performance)
       keyExtractor={item => item.toString()}
       recycleItems={true}
+      // Optional props
+      estimatedItemSize={50}
     />
   );
 };
