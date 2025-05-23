@@ -56,8 +56,8 @@ const data = Array.from({length: 60}, (_, i) => ({
 const SVGView = () => {
   return (
     <>
-      {/* <SvgXml xml={svgXmlData} /> */}
-      <Image source={svg} style={styles.image} contentFit="contain" />
+      <SvgXml xml={svgXmlData} />
+      {/* <Image source={svg} style={styles.image} contentFit="contain" /> */}
     </>
   );
 };
@@ -72,11 +72,11 @@ const InnerView = React.memo(() => {
 
 const Gallery = React.memo(() => {
   return (
-    <>
+    <View style={styles.container}>
       {data.map(item => (
         <InnerView key={item.id} />
       ))}
-    </>
+    </View>
   );
 });
 
@@ -84,12 +84,13 @@ export default function Native() {
   const [show, setShow] = React.useState(false);
   return (
     <View style={styles.mainContainer}>
-      <Button
-        title="Toggle"
+      <Pressable
+        style={styles.button}
         onPress={() => {
           setShow(!show);
-        }}
-      />
+        }}>
+        <Text style={styles.buttonText}>Toggle</Text>
+      </Pressable>
       <View style={styles.rowContainer}>
         {show && (
           <View style={styles.svgContainer}>
@@ -109,32 +110,59 @@ export default function Native() {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#f8f9fa',
+    padding: 16,
   },
   rowContainer: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
+    marginTop: 16,
   },
   svgContainer: {
     flex: 1,
-    alignItems: 'flex-start',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ffffff',
+    borderRadius: 12,
+    padding: 20,
+    marginBottom: 16,
+    elevation: 3,
   },
   galleryContainer: {
-    flex: 1,
+    flex: 2,
+    backgroundColor: '#ffffff',
+    borderRadius: 12,
+    padding: 16,
+    elevation: 3,
   },
   container: {
     flex: 1,
     flexWrap: 'wrap',
     flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   innerContainer: {
-    backgroundColor: 'red',
-    height: '10%',
-    width: '20%',
-    margin: 1,
+    height: '8%',
+    width: '30%',
+    marginBottom: 8,
+    borderRadius: 8,
+    overflow: 'hidden',
   },
   image: {
     width: '100%',
     height: '100%',
+  },
+  button: {
+    backgroundColor: '#007bff',
+    padding: 12,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginBottom: 16,
+    elevation: 3,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
