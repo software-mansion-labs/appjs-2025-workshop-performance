@@ -9,6 +9,7 @@ import {
 import {NavigationContainer, ParamListBase} from '@react-navigation/native';
 
 import {Lists} from './examples/Lists/Lists';
+import Native from './examples/Native/Native';
 
 declare global {
   var performance: {
@@ -22,6 +23,11 @@ const screens = [
     icon: '📜',
     name: 'Lists',
     screen: Lists,
+  },
+  {
+    icon: '📱',
+    name: 'Native',
+    screen: Native,
   },
 ];
 
