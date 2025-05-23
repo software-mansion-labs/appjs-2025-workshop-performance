@@ -53,6 +53,65 @@ const data = Array.from({length: 60}, (_, i) => ({
   title: `Item ${i}`,
 }));
 
+const styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+    backgroundColor: '#f8f9fa',
+    padding: 16,
+  },
+  rowContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    marginTop: 16,
+  },
+  svgContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#e9ecef',
+    borderRadius: 8,
+    padding: 16,
+    marginRight: 8,
+  },
+  galleryContainer: {
+    flex: 1,
+    backgroundColor: '#e9ecef',
+    borderRadius: 8,
+    padding: 16,
+    marginLeft: 8,
+  },
+  container: {
+    flex: 1,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  innerContainer: {
+    backgroundColor: '#dee2e6',
+    height: 80,
+    width: '30%',
+    marginBottom: 8,
+    borderRadius: 8,
+    overflow: 'hidden',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+  },
+  button: {
+    backgroundColor: '#007bff',
+    padding: 12,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+});
+
 const SVGView = () => {
   return (
     <>
@@ -65,7 +124,7 @@ const SVGView = () => {
 const InnerView = React.memo(() => {
   return (
     <View style={styles.innerContainer}>
-      <SVGView />
+      <Image source={svg} style={styles.image} contentFit="contain" />
     </View>
   );
 });
@@ -84,16 +143,17 @@ export default function Native() {
   const [show, setShow] = React.useState(false);
   return (
     <View style={styles.mainContainer}>
-      <Button
-        title="Toggle"
+      <Pressable
+        style={styles.button}
         onPress={() => {
           setShow(!show);
-        }}
-      />
+        }}>
+        <Text style={styles.buttonText}>Toggle</Text>
+      </Pressable>
       <View style={styles.rowContainer}>
         {show && (
           <View style={styles.svgContainer}>
-            <SVGView />
+            <SvgXml xml={svgXmlData} />
           </View>
         )}
         <View style={styles.galleryContainer}>
@@ -105,36 +165,3 @@ export default function Native() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  mainContainer: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  rowContainer: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  svgContainer: {
-    flex: 1,
-    alignItems: 'flex-start',
-  },
-  galleryContainer: {
-    flex: 1,
-  },
-  container: {
-    flex: 1,
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-  },
-  innerContainer: {
-    backgroundColor: 'red',
-    height: '10%',
-    width: '20%',
-    margin: 1,
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-  },
-});
