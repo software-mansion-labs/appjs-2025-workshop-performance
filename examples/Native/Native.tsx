@@ -53,65 +53,6 @@ const data = Array.from({length: 60}, (_, i) => ({
   title: `Item ${i}`,
 }));
 
-const styles = StyleSheet.create({
-  mainContainer: {
-    flex: 1,
-    backgroundColor: '#f8f9fa',
-    padding: 16,
-  },
-  rowContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    marginTop: 16,
-  },
-  svgContainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#e9ecef',
-    borderRadius: 8,
-    padding: 16,
-    marginRight: 8,
-  },
-  galleryContainer: {
-    flex: 1,
-    backgroundColor: '#e9ecef',
-    borderRadius: 8,
-    padding: 16,
-    marginLeft: 8,
-  },
-  container: {
-    flex: 1,
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  innerContainer: {
-    backgroundColor: '#dee2e6',
-    height: 80,
-    width: '30%',
-    marginBottom: 8,
-    borderRadius: 8,
-    overflow: 'hidden',
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-  },
-  button: {
-    backgroundColor: '#007bff',
-    padding: 12,
-    borderRadius: 8,
-    alignItems: 'center',
-    marginBottom: 16,
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-});
-
 const SVGView = () => {
   return (
     <>
@@ -124,18 +65,18 @@ const SVGView = () => {
 const InnerView = React.memo(() => {
   return (
     <View style={styles.innerContainer}>
-      <Image source={svg} style={styles.image} contentFit="contain" />
+      <SVGView />
     </View>
   );
 });
 
 const Gallery = React.memo(() => {
   return (
-    <>
+    <View style={styles.container}>
       {data.map(item => (
         <InnerView key={item.id} />
       ))}
-    </>
+    </View>
   );
 });
 
@@ -153,7 +94,7 @@ export default function Native() {
       <View style={styles.rowContainer}>
         {show && (
           <View style={styles.svgContainer}>
-            <SvgXml xml={svgXmlData} />
+            <SVGView />
           </View>
         )}
         <View style={styles.galleryContainer}>
@@ -165,3 +106,63 @@ export default function Native() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+    backgroundColor: '#f8f9fa',
+    padding: 16,
+  },
+  rowContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    marginTop: 16,
+  },
+  svgContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ffffff',
+    borderRadius: 12,
+    padding: 20,
+    marginBottom: 16,
+    elevation: 3,
+  },
+  galleryContainer: {
+    flex: 2,
+    backgroundColor: '#ffffff',
+    borderRadius: 12,
+    padding: 16,
+    elevation: 3,
+  },
+  container: {
+    flex: 1,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  innerContainer: {
+    height: '8%',
+    width: '30%',
+    marginBottom: 8,
+    borderRadius: 8,
+    overflow: 'hidden',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+  },
+  button: {
+    backgroundColor: '#007bff',
+    padding: 12,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginBottom: 16,
+    elevation: 3,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+});
