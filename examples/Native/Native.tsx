@@ -56,8 +56,8 @@ const data = Array.from({length: 60}, (_, i) => ({
 const SVGView = () => {
   return (
     <>
-      {/* <SvgXml xml={svgXmlData} /> */}
-      <Image source={svg} style={styles.image} contentFit="contain" />
+      <SvgXml xml={svgXmlData} />
+      {/* <Image source={svg} style={styles.image} contentFit="contain" /> */}
     </>
   );
 };
