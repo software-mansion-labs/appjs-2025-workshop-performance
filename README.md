@@ -17,6 +17,7 @@ If you are reading this before attending the workshops, please **complete** the 
 
 ```sh
 git clone https://github.com/software-mansion-labs/appjs-2025-workshop-performance
+cd appjs-2025-workshop-performance
 yarn
 cd ios && bundle install && bundle exec pod install && cd ..
 open ios/MyApp.xcworkspace
