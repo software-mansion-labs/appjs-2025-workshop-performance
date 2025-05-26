@@ -11,18 +11,22 @@ const {withExpoAtlasWithoutExpo} = require('expo-atlas-without-expo');
  *
  * @type {import('@react-native/metro-config').MetroConfig}
  */
-const config = {
-  // transformer: {
-  //   babelTransformerPath: require.resolve(
-  //     'react-native-svg-transformer/react-native',
-  //   ),
-  // },
-  // resolver: {
-  //   assetExts: assetExts.filter(ext => ext !== 'svg'),
-  //   sourceExts: [...sourceExts, 'svg'],
-  // },
-};
+let config = {};
 
-module.exports = withExpoAtlasWithoutExpo(
-  mergeConfig(getDefaultConfig(__dirname), config),
-);
+// config = {
+//   transformer: {
+//     babelTransformerPath: require.resolve(
+//       'react-native-svg-transformer/react-native',
+//     ),
+//   },
+//   resolver: {
+//     assetExts: assetExts.filter(ext => ext !== 'svg'),
+//     sourceExts: [...sourceExts, 'svg'],
+//   },
+// };
+
+config = mergeConfig(getDefaultConfig(__dirname), config);
+
+// config = withExpoAtlasWithoutExpo(config);
+
+module.exports = config;
