@@ -1,0 +1,28 @@
+diff --git a/node_modules/react-native/ReactCommon/react/renderer/core/ShadowNode.cpp b/node_modules/react-native/ReactCommon/react/renderer/core/ShadowNode.cpp
+index d762d8b..8151f98 100644
+--- a/node_modules/react-native/ReactCommon/react/renderer/core/ShadowNode.cpp
++++ b/node_modules/react-native/ReactCommon/react/renderer/core/ShadowNode.cpp
+@@ -142,8 +142,9 @@ ShadowNode::Unshared ShadowNode::clone(
+     if (fragment.props == ShadowNodeFragment::propsPlaceholder()) {
+       // Clone existing `props_` with `family.nativeProps_DEPRECATED` to apply
+       // previously set props via `setNativeProps` API.
++      auto nativeProps = family.nativeProps_DEPRECATED;
+       auto props = componentDescriptor.cloneProps(
+-          propsParserContext, props_, RawProps(*family.nativeProps_DEPRECATED));
++          propsParserContext, props_, RawProps(*nativeProps));
+       auto clonedNode = componentDescriptor.cloneShadowNode(
+           *this,
+           {.props = props,
+diff --git a/node_modules/react-native/ReactCommon/react/renderer/core/ShadowNodeFamily.h b/node_modules/react-native/ReactCommon/react/renderer/core/ShadowNodeFamily.h
+index 203f895..1ecf335 100644
+--- a/node_modules/react-native/ReactCommon/react/renderer/core/ShadowNodeFamily.h
++++ b/node_modules/react-native/ReactCommon/react/renderer/core/ShadowNodeFamily.h
+@@ -115,7 +115,7 @@ class ShadowNodeFamily final {
+    * not used. It is used to backport setNativeProps API from the old
+    * architecture and will be removed in the future.
+    */
+-  mutable std::unique_ptr<folly::dynamic> nativeProps_DEPRECATED;
++  mutable std::shared_ptr<folly::dynamic> nativeProps_DEPRECATED;
+ 
+   /**
+    * @return tag for the ShadowNodeFamily.
