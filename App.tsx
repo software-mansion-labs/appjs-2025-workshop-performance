@@ -15,6 +15,7 @@ import Threads from './examples/Threads/Threads';
 import ViewReparenting from './examples/ViewReparenting/ViewReparenting';
 import ViewFlattening from './examples/ViewFlattening/ViewFlattening';
 import ViewRecycling from './examples/ViewRecycling/ViewRecycling';
+import TextInputs from './examples/TextInputExample/TextInputs';
 
 declare global {
   var performance: {
@@ -58,6 +59,11 @@ const screens = [
     icon: '♻️',
     name: 'View recycling',
     screen: ViewRecycling,
+  },
+  {
+    icon: '⌨️',
+    name: 'Text inputs',
+    screen: TextInputs,
   },
 ];
 
