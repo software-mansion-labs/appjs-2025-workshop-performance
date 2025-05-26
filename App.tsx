@@ -16,6 +16,7 @@ import ViewReparenting from './examples/ViewReparenting/ViewReparenting';
 import ViewFlattening from './examples/ViewFlattening/ViewFlattening';
 import ViewRecycling from './examples/ViewRecycling/ViewRecycling';
 import TextInputs from './examples/TextInputExample/TextInputs';
+import MemoryLeaks from './examples/MemoryLeaks/MemoryLeaks';
 
 declare global {
   var performance: {
@@ -64,6 +65,11 @@ const screens = [
     icon: '⌨️',
     name: 'Text inputs',
     screen: TextInputs,
+  },
+  {
+    icon: '🚰',
+    name: 'Memory leaks',
+    screen: MemoryLeaks,
   },
 ];
 
