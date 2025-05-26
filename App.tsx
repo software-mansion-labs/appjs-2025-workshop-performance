@@ -12,6 +12,7 @@ import {Lists} from './examples/Lists/Lists';
 import Native from './examples/Native/Native';
 import Fps from './examples/Fps/Fps';
 import Threads from './examples/Threads/Threads';
+import ViewReparenting from './examples/ViewReparenting/ViewReparenting';
 
 declare global {
   var performance: {
@@ -40,6 +41,11 @@ const screens = [
     icon: '🧵',
     name: 'Threads',
     screen: Threads,
+  },
+  {
+    icon: '🌲',
+    name: 'View reparenting',
+    screen: ViewReparenting,
   },
 ];
 
