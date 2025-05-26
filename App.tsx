@@ -18,6 +18,7 @@ import ViewRecycling from './examples/ViewRecycling/ViewRecycling';
 import TextInputs from './examples/TextInputExample/TextInputs';
 import MemoryLeaks from './examples/MemoryLeaks/MemoryLeaks';
 import Svg from './examples/Svg/Svg';
+import BlurHashThumbHash from './examples/BlurHashThumbHash/BlurHashThumbHash';
 
 declare global {
   var performance: {
@@ -76,6 +77,11 @@ const screens = [
     icon: '🖼️',
     name: 'SVG',
     screen: Svg,
+  },
+  {
+    icon: '#️⃣',
+    name: 'BlurHash / ThumbHash',
+    screen: BlurHashThumbHash,
   },
 ];
 
