@@ -7,13 +7,21 @@ import {FlashList} from '@shopify/flash-list';
 
 import {LegendList} from '@legendapp/list';
 
-const DATA = new Array(10000).fill(0).map((_, i) => i);
+const DATA = new Array(5000).fill(0).map((_, i) => i);
 
 function Item({value}: {value: string}) {
-  return <Text>{value}</Text>;
+  return <Text style={styles.item}>{value}</Text>;
 }
 
-function ListExample() {
+function renderItem({item}: {item: number}) {
+  return <Item value={item.toString()} />;
+}
+
+function keyExtractor(item: number) {
+  return item.toString();
+}
+
+function ScrollViewExample() {
   return (
     <ScrollView>
       {DATA.map(item => (
@@ -24,43 +32,34 @@ function ListExample() {
 }
 
 function FlatListExample() {
-  return (
-    <FlatList
-      data={DATA}
-      renderItem={({item}) => <Item value={item.toString()} />}
-    />
-  );
+  return <FlatList data={DATA} renderItem={renderItem} />;
 }
 
 function FlashListExample() {
   return (
-    <FlashList
+    <FlashList data={DATA} renderItem={renderItem} estimatedItemSize={50} />
+  );
+}
+
+function LegendListExample() {
+  return (
+    <LegendList
+      // Required props
       data={DATA}
-      renderItem={({item}) => <Item value={item.toString()} />}
+      renderItem={renderItem}
+      // Recommended props (improves performance)
+      keyExtractor={keyExtractor}
+      recycleItems
+      // Optional props
       estimatedItemSize={50}
     />
   );
 }
 
-const LegendListExample = () => {
-  return (
-    <LegendList
-      // Required Props
-      data={DATA}
-      renderItem={({item}) => <Item value={item.toString()} />}
-      // Recommended props (Improves performance)
-      keyExtractor={item => item.toString()}
-      recycleItems={true}
-      // Optional props
-      estimatedItemSize={50}
-    />
-  );
-};
-
 export function Lists() {
   return (
     <View style={styles.container}>
-      <ListExample />
+      <ScrollViewExample />
       {/* <FlatListExample /> */}
       {/* <FlashListExample /> */}
       {/* <LegendListExample /> */}
@@ -71,5 +70,9 @@ export function Lists() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  item: {
+    backgroundColor: 'lightblue',
+    borderWidth: 1,
   },
 });
