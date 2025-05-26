@@ -17,6 +17,7 @@ import ViewFlattening from './examples/ViewFlattening/ViewFlattening';
 import ViewRecycling from './examples/ViewRecycling/ViewRecycling';
 import TextInputs from './examples/TextInputExample/TextInputs';
 import MemoryLeaks from './examples/MemoryLeaks/MemoryLeaks';
+import Svg from './examples/Svg/Svg';
 
 declare global {
   var performance: {
@@ -70,6 +71,11 @@ const screens = [
     icon: '🚰',
     name: 'Memory leaks',
     screen: MemoryLeaks,
+  },
+  {
+    icon: '🖼️',
+    name: 'SVG',
+    screen: Svg,
   },
 ];
 
