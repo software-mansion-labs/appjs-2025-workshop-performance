@@ -45,12 +45,12 @@ const screens = [
     screen: Threads,
   },
   {
-    icon: '🌲',
+    icon: '🔝',
     name: 'View reparenting',
     screen: ViewReparenting,
   },
   {
-    icon: '🌲',
+    icon: '🚜',
     name: 'View flattening',
     screen: ViewFlattening,
   },
