@@ -14,6 +14,7 @@ import Fps from './examples/Fps/Fps';
 import Threads from './examples/Threads/Threads';
 import ViewReparenting from './examples/ViewReparenting/ViewReparenting';
 import ViewFlattening from './examples/ViewFlattening/ViewFlattening';
+import ViewRecycling from './examples/ViewRecycling/ViewRecycling';
 
 declare global {
   var performance: {
@@ -52,6 +53,11 @@ const screens = [
     icon: '🌲',
     name: 'View flattening',
     screen: ViewFlattening,
+  },
+  {
+    icon: '♻️',
+    name: 'View recycling',
+    screen: ViewRecycling,
   },
 ];
 
