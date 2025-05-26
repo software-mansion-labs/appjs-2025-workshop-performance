@@ -1,11 +1,23 @@
 import React, {useEffect} from 'react';
 import {Button, Dimensions, StyleSheet, Text, View} from 'react-native';
 
+class HeavyObject {
+  #data: string[];
+
+  constructor() {
+    this.#data = new Array(25_000_000).fill('string');
+  }
+
+  get length() {
+    return this.#data.length;
+  }
+}
+
 function LeakyComponent() {
   useEffect(() => {
-    const array = new Array(100_000_000).fill('string');
+    const heavyObject = new HeavyObject();
     const listener = Dimensions.addEventListener('change', () => {
-      console.log('Dimensions changed', array.length);
+      console.log('Dimensions changed', heavyObject.length);
     });
     // return () => listener.remove();
   }, []);
