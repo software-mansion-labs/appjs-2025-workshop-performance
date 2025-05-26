@@ -11,6 +11,7 @@ import {NavigationContainer, ParamListBase} from '@react-navigation/native';
 import {Lists} from './examples/Lists/Lists';
 import Native from './examples/Native/Native';
 import Fps from './examples/Fps/Fps';
+import Threads from './examples/Threads/Threads';
 
 declare global {
   var performance: {
@@ -34,6 +35,11 @@ const screens = [
     icon: '🎞️',
     name: 'FPS',
     screen: Fps,
+  },
+  {
+    icon: '🧵',
+    name: 'Threads',
+    screen: Threads,
   },
 ];
 
