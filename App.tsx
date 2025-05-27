@@ -27,6 +27,7 @@ import BlurHashThumbHash from './examples/BlurHashThumbHash/BlurHashThumbHash';
 import {useMMKVObject} from 'react-native-mmkv';
 import Persistence from './examples/Persistence/Persistence';
 import AnimatedSvg from './examples/AnimatedSvg/AnimatedSvg';
+import CompilerPlayground from './examples/CompilerPlayground/CompilerPlayground';
 
 declare global {
   var performance: {
@@ -105,6 +106,11 @@ const screens = [
     icon: '💾',
     name: 'Persistence',
     screen: Persistence,
+  },
+  {
+    icon: '🔧',
+    name: 'React Compiler Playground',
+    screen: CompilerPlayground,
   },
 ];
 
