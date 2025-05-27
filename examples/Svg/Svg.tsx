@@ -2,21 +2,59 @@ import {Image} from 'expo-image';
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
+import {LocalSvg} from 'react-native-svg/css';
+
+// @ts-expect-error fix type declarations
 import WikipediaLogo from '../../assets/wikipedia.svg';
 
-const WIDTH = 1.5 * 103;
-const HEIGHT = 1.5 * 94;
+const WIDTH = 103;
+const HEIGHT = 94;
 
-function ExpoImage() {
+function ExpoImageRemote() {
   return (
     <>
-      <Text style={styles.heading}>expo-image</Text>
-      {typeof WikipediaLogo === 'number' ? (
-        <Image source={WikipediaLogo} style={styles.image} />
+      <Text style={styles.heading}>expo-image remote</Text>
+      <Image
+        source={{
+          uri: `https://upload.wikimedia.org/wikipedia/commons/8/80/Wikipedia-logo-v2.svg?t=${Date.now()}`,
+        }}
+        style={styles.image}
+      />
+    </>
+  );
+}
+
+function ExpoImageLocal() {
+  return (
+    <>
+      <Text style={styles.heading}>expo-image local</Text>
+      {typeof require('../../assets/wikipedia.svg') === 'number' ? (
+        <Image
+          source={require('../../assets/wikipedia.svg')}
+          style={styles.image}
+        />
       ) : (
         <Text style={styles.error}>
-          react-native-svg-transformer must be disabled{'\n'}
-          babel-plugin-inline-import must be disabled
+          react-native-svg-transformer must be disabled
+        </Text>
+      )}
+    </>
+  );
+}
+
+function ReactNativeLocalSvg() {
+  return (
+    <>
+      <Text style={styles.heading}>react-native-svg LocalSvg</Text>
+      {typeof require('../../assets/wikipedia.svg') === 'number' ? (
+        <LocalSvg
+          asset={require('../../assets/wikipedia.svg')}
+          width={WIDTH}
+          height={HEIGHT}
+        />
+      ) : (
+        <Text style={styles.error}>
+          react-native-svg-transformer must be disabled
         </Text>
       )}
     </>
@@ -41,7 +79,7 @@ function ReactNativeSvgXml() {
 function ReactNativeSvgTransformer() {
   return (
     <>
-      <Text style={styles.heading}>react-native-svg</Text>
+      <Text style={styles.heading}>react-native-svg-transformer</Text>
       {typeof WikipediaLogo === 'function' ? (
         <WikipediaLogo width={WIDTH} height={HEIGHT} />
       ) : (
@@ -57,7 +95,9 @@ function ReactNativeSvgTransformer() {
 export default function Svg() {
   return (
     <View style={styles.container}>
-      <ExpoImage />
+      <ExpoImageRemote />
+      <ExpoImageLocal />
+      <ReactNativeLocalSvg />
       <ReactNativeSvgXml />
       <ReactNativeSvgTransformer />
     </View>
@@ -80,7 +120,7 @@ const styles = StyleSheet.create({
     height: HEIGHT,
   },
   error: {
-    width: 2 * WIDTH,
+    width: 330,
     height: HEIGHT,
     lineHeight: 20,
     textAlign: 'center',
