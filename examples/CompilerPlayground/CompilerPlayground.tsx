@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     gap: '10',
-    paddingTop: '25%',
+    paddingTop: 10,
   },
   listContainer: {
     gap: 10,
