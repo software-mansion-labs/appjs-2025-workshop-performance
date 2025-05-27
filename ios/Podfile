@@ -49,5 +49,8 @@ target 'MyApp' do
       :mac_catalyst_enabled => false,
       # :ccache_enabled => true
     )
+  
+    # https://maplibre.org/maplibre-react-native/docs/setup/react-native#ios
+    $MLRN.post_install(installer)
   end
 end

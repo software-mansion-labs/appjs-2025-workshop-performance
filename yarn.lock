@@ -2348,6 +2348,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@maplibre/maplibre-react-native@npm:^10.1.4":
+  version: 10.1.4
+  resolution: "@maplibre/maplibre-react-native@npm:10.1.4"
+  dependencies:
+    "@turf/distance": ^7.1.0
+    "@turf/helpers": ^7.1.0
+    "@turf/length": ^7.1.0
+    "@turf/nearest-point-on-line": ^7.1.0
+    debounce: ^2.2.0
+  peerDependencies:
+    "@expo/config-plugins": ">=7"
+    "@types/geojson": ^7946.0.0
+    "@types/react": ">=16.6.1"
+    react: ">=16.6.1"
+    react-native: ">=0.59.9"
+  peerDependenciesMeta:
+    "@expo/config-plugins":
+      optional: true
+    "@types/geojson":
+      optional: true
+    "@types/react":
+      optional: true
+  checksum: 10fe71195b5975a23a9e74706743a009b0bcbb036a19fcd2c6282d085d1641c83eccc0486feded3a8b9c5cafef989e5db281dfe904d8e33471c1087b0945ebe8
+  languageName: node
+  linkType: hard
+
 "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1":
   version: 5.1.1-v1
   resolution: "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1"
@@ -3122,6 +3148,76 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@turf/distance@npm:^7.1.0, @turf/distance@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "@turf/distance@npm:7.2.0"
+  dependencies:
+    "@turf/helpers": ^7.2.0
+    "@turf/invariant": ^7.2.0
+    "@types/geojson": ^7946.0.10
+    tslib: ^2.8.1
+  checksum: 5da9abc75dc50559da967fdc3d4cb3d165e192ee89ef47ec50f4a14fa155b60bc3f5b95a7c08ff7b9e3cb1ef5c7b50c4e31817a7d79618c3d93ed23f6e708f48
+  languageName: node
+  linkType: hard
+
+"@turf/helpers@npm:^7.1.0, @turf/helpers@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "@turf/helpers@npm:7.2.0"
+  dependencies:
+    "@types/geojson": ^7946.0.10
+    tslib: ^2.8.1
+  checksum: 44697cf00db81ef8c4a43d13c7fc59ad06a50a5fae78f8d5e735fcdf89822107611585dcec0e973ae56248327a0f8f835dfbee952ec08bb6b7154592ce14aa5e
+  languageName: node
+  linkType: hard
+
+"@turf/invariant@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "@turf/invariant@npm:7.2.0"
+  dependencies:
+    "@turf/helpers": ^7.2.0
+    "@types/geojson": ^7946.0.10
+    tslib: ^2.8.1
+  checksum: 1b82c73d133d085ffc33ac7a0953365170065c277974dc00949ae76178ea2755bec485907bd5e34af2563b1a1a3add8ba31914f80bda127bf3fe0e9aae3065cb
+  languageName: node
+  linkType: hard
+
+"@turf/length@npm:^7.1.0":
+  version: 7.2.0
+  resolution: "@turf/length@npm:7.2.0"
+  dependencies:
+    "@turf/distance": ^7.2.0
+    "@turf/helpers": ^7.2.0
+    "@turf/meta": ^7.2.0
+    "@types/geojson": ^7946.0.10
+    tslib: ^2.8.1
+  checksum: 909d2588205296a9f7c83b25ccbd35841f1495a96020f87b3e0d3a3adcbc1f340f91ef3283e38f65e15ca7921c137e9abf1984466ed09f7b35438a0e63691e64
+  languageName: node
+  linkType: hard
+
+"@turf/meta@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "@turf/meta@npm:7.2.0"
+  dependencies:
+    "@turf/helpers": ^7.2.0
+    "@types/geojson": ^7946.0.10
+  checksum: 77de8b1e345511e62ea421581dcdaf0d46b20d2440137f116341ed2213ba519da39aba6fd041098eb63a65d52cefb179206cc663ab4d289f220cf00f49f95bb0
+  languageName: node
+  linkType: hard
+
+"@turf/nearest-point-on-line@npm:^7.1.0":
+  version: 7.2.0
+  resolution: "@turf/nearest-point-on-line@npm:7.2.0"
+  dependencies:
+    "@turf/distance": ^7.2.0
+    "@turf/helpers": ^7.2.0
+    "@turf/invariant": ^7.2.0
+    "@turf/meta": ^7.2.0
+    "@types/geojson": ^7946.0.10
+    tslib: ^2.8.1
+  checksum: 32e08c8037b41a3ba2a9ddbb847b1f456f0f6930cfe884dae1b86acafd143f884409bdddd9367c33d7a717e769a467f8809b5484ac73a2d0ebc2db5d19d7df74
+  languageName: node
+  linkType: hard
+
 "@types/babel__core@npm:^7.1.14":
   version: 7.20.5
   resolution: "@types/babel__core@npm:7.20.5"
@@ -3163,7 +3259,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/geojson@npm:^7946.0.13":
+"@types/geojson@npm:^7946.0.10, @types/geojson@npm:^7946.0.13":
   version: 7946.0.16
   resolution: "@types/geojson@npm:7946.0.16"
   checksum: d66e5e023f43b3e7121448117af1930af7d06410a32a585a8bc9c6bb5d97e0d656cd93d99e31fa432976c32e98d4b780f82bf1fd1acd20ccf952eb6b8e39edf2
@@ -3533,6 +3629,7 @@ __metadata:
     "@babel/preset-env": ^7.25.3
     "@babel/runtime": ^7.25.0
     "@legendapp/list": ^1.0.13
+    "@maplibre/maplibre-react-native": ^10.1.4
     "@react-native-async-storage/async-storage": ^2.1.2
     "@react-native-community/cli": 18.0.0
     "@react-native-community/cli-platform-android": 18.0.0
@@ -4933,6 +5030,13 @@ __metadata:
   version: 1.11.13
   resolution: "dayjs@npm:1.11.13"
   checksum: f388db88a6aa93956c1f6121644e783391c7b738b73dbc54485578736565c8931bdfba4bb94e9b1535c6e509c97d5deb918bbe1ae6b34358d994de735055cca9
+  languageName: node
+  linkType: hard
+
+"debounce@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "debounce@npm:2.2.0"
+  checksum: c78301e376677827ade07d423dac24266218ebee59e79ac135f4eadc4b5ff453c022fb00acb8cad1988ab65e8576631316a5cc263516716e2d7d4def69cf975b
   languageName: node
   linkType: hard
 
@@ -11289,7 +11393,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:2.8.1, tslib@npm:^2.0.3":
+"tslib@npm:2.8.1, tslib@npm:^2.0.3, tslib@npm:^2.8.1":
   version: 2.8.1
   resolution: "tslib@npm:2.8.1"
   checksum: e4aba30e632b8c8902b47587fd13345e2827fa639e7c3121074d5ee0880723282411a8838f830b55100cbe4517672f84a2472667d355b81e8af165a55dc6203a
