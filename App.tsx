@@ -24,6 +24,7 @@ import MemoryLeaks from './examples/MemoryLeaks/MemoryLeaks';
 import Svg from './examples/Svg/Svg';
 import BlurHashThumbHash from './examples/BlurHashThumbHash/BlurHashThumbHash';
 import {useMMKVObject} from 'react-native-mmkv';
+import Persistence from './examples/Persistence/Persistence';
 
 declare global {
   var performance: {
@@ -87,6 +88,11 @@ const screens = [
     icon: '#️⃣',
     name: 'BlurHash / ThumbHash',
     screen: BlurHashThumbHash,
+  },
+  {
+    icon: '💾',
+    name: 'Persistence',
+    screen: Persistence,
   },
 ];
 
