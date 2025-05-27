@@ -13,6 +13,7 @@ import {
 } from '@react-navigation/native';
 
 import {Lists} from './examples/Lists/Lists';
+import Maps from './examples/Maps/Maps';
 import Native from './examples/Native/Native';
 import Fps from './examples/Fps/Fps';
 import Threads from './examples/Threads/Threads';
@@ -39,6 +40,11 @@ const screens = [
     icon: '📜',
     name: 'Lists',
     screen: Lists,
+  },
+  {
+    icon: '🗺️',
+    name: 'Maps',
+    screen: Maps,
   },
   {
     icon: '📱',
