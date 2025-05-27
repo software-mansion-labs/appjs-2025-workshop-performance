@@ -1,22 +1,14 @@
 import * as React from 'react';
 
-import {
-  ActivityIndicator,
-  FlatList,
-  Linking,
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {FlatList, StyleSheet, Text, View} from 'react-native';
 import {GestureHandlerRootView, RectButton} from 'react-native-gesture-handler';
 import {
   NativeStackScreenProps,
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
 import {
+  InitialState,
   NavigationContainer,
-  NavigationState,
   ParamListBase,
 } from '@react-navigation/native';
 
@@ -31,7 +23,7 @@ import TextInputs from './examples/TextInputExample/TextInputs';
 import MemoryLeaks from './examples/MemoryLeaks/MemoryLeaks';
 import Svg from './examples/Svg/Svg';
 import BlurHashThumbHash from './examples/BlurHashThumbHash/BlurHashThumbHash';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useMMKVObject} from 'react-native-mmkv';
 
 declare global {
   var performance: {
@@ -135,54 +127,15 @@ function Menu({navigation}: NativeStackScreenProps<ParamListBase>) {
   );
 }
 
-// Copied from https://reactnavigation.org/docs/state-persistence/#usage
-const PERSISTENCE_KEY = 'NAVIGATION_STATE_V1';
-
 export default function App() {
-  const [isReady, setIsReady] = React.useState(Platform.OS === 'web'); // Don't persist state on web since it's based on URL
-  const [initialState, setInitialState] = React.useState();
-
-  const onStateChange = React.useCallback(
-    (state: Readonly<NavigationState> | undefined) =>
-      AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state)),
-    [],
-  );
-
-  React.useEffect(() => {
-    const restoreState = async () => {
-      try {
-        const initialUrl = await Linking.getInitialURL();
-
-        if (initialUrl == null) {
-          // Only restore state if there's no deep link
-          const savedStateString = await AsyncStorage.getItem(PERSISTENCE_KEY);
-          const state = savedStateString
-            ? JSON.parse(savedStateString)
-            : undefined;
-
-          if (state !== undefined) {
-            setInitialState(state);
-          }
-        }
-      } finally {
-        setIsReady(true);
-      }
-    };
-
-    if (!isReady) {
-      restoreState();
-    }
-  }, [isReady]);
-
-  if (!isReady) {
-    return <ActivityIndicator style={styles.container} />;
-  }
+  const [initialState, setInitialState] =
+    useMMKVObject<InitialState>('initialState');
 
   return (
     <GestureHandlerRootView style={styles.container}>
       <NavigationContainer
         initialState={initialState}
-        onStateChange={onStateChange}>
+        onStateChange={setInitialState}>
         <Stack.Navigator>
           <Stack.Screen name="App.js" component={Menu} />
           {screens.map(({name, screen}) => (
