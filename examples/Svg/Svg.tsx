@@ -47,11 +47,13 @@ function ReactNativeLocalSvg() {
     <>
       <Text style={styles.heading}>react-native-svg LocalSvg</Text>
       {typeof require('../../assets/wikipedia.svg') === 'number' ? (
-        <LocalSvg
-          asset={require('../../assets/wikipedia.svg')}
-          width={WIDTH}
-          height={HEIGHT}
-        />
+        <View style={styles.image}>
+          <LocalSvg
+            asset={require('../../assets/wikipedia.svg')}
+            width={WIDTH}
+            height={HEIGHT}
+          />
+        </View>
       ) : (
         <Text style={styles.error}>
           react-native-svg-transformer must be disabled
@@ -108,7 +110,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
   },
   heading: {
     fontWeight: 'bold',
