@@ -12,6 +12,7 @@ import {
   ParamListBase,
 } from '@react-navigation/native';
 
+import Empty from './examples/Empty/Empty';
 import {Lists} from './examples/Lists/Lists';
 import Maps from './examples/Maps/Maps';
 import Native from './examples/Native/Native';
@@ -36,6 +37,11 @@ declare global {
 
 const Stack = createNativeStackNavigator();
 const screens = [
+  {
+    icon: '👻',
+    name: 'Empty',
+    screen: Empty,
+  },
   {
     icon: '📜',
     name: 'Lists',
