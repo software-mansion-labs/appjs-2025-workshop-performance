@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 
-export default function CompilerPlayground(): React.JSX.Element {
+export default function ReactCompiler() {
   const [data, setData] = useState<ItemData[]>([]);
   const newData = useRef<ItemData[]>([]);
   const [hasUpdate, setHasUpdate] = useState(false);
@@ -21,9 +21,9 @@ export default function CompilerPlayground(): React.JSX.Element {
       provider: shop,
       price: getPrice(),
     }));
-    return shopsWithPrices.sort((a, b) => {
-      return parseFloat(a.price.slice(1)) - parseFloat(b.price.slice(1));
-    });
+    return shopsWithPrices.sort(
+      (a, b) => parseFloat(a.price.slice(1)) - parseFloat(b.price.slice(1)),
+    );
   };
 
   useEffect(() => {
@@ -32,9 +32,7 @@ export default function CompilerPlayground(): React.JSX.Element {
       newData.current = getData();
       setHasUpdate(true);
     }, 5000);
-    return () => {
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, []);
 
   const getItemBackgroundColor = useCallback(
@@ -95,17 +93,13 @@ export default function CompilerPlayground(): React.JSX.Element {
               <Button
                 title="Lower"
                 onPress={() =>
-                  setUserFilter(prev => ({
-                    maxPrice: prev.maxPrice - 1,
-                  }))
+                  setUserFilter(prev => ({maxPrice: prev.maxPrice - 1}))
                 }
               />
               <Button
                 title="Higher"
                 onPress={() =>
-                  setUserFilter(prev => ({
-                    maxPrice: prev.maxPrice + 1,
-                  }))
+                  setUserFilter(prev => ({maxPrice: prev.maxPrice + 1}))
                 }
               />
               <Text>Filter: ${userFilter.maxPrice.toFixed(2)}</Text>
@@ -121,11 +115,7 @@ export default function CompilerPlayground(): React.JSX.Element {
   );
 }
 
-function Column({
-  provider,
-  price,
-  getItemBackgroundColor,
-}: ColumnProps): React.JSX.Element {
+function Column({provider, price, getItemBackgroundColor}: ColumnProps) {
   return (
     <View
       style={[styles.row, {backgroundColor: getItemBackgroundColor(price)}]}>
