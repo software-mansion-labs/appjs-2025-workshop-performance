@@ -29,6 +29,7 @@ import {useMMKVObject} from 'react-native-mmkv';
 import Persistence from './examples/Persistence/Persistence';
 import AnimatedSvg from './examples/AnimatedSvg/AnimatedSvg';
 import Screens from './examples/Screens/Screens';
+import ReactCompiler from './examples/ReactCompiler/ReactCompiler';
 
 declare global {
   var performance: {
@@ -117,6 +118,11 @@ const screens = [
     icon: '💾',
     name: 'Persistence',
     screen: Persistence,
+  },
+  {
+    icon: '🔧',
+    name: 'React Compiler',
+    screen: ReactCompiler,
   },
 ];
 
