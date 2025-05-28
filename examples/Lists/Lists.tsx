@@ -56,7 +56,7 @@ function LegendListExample() {
   );
 }
 
-export function Lists() {
+export default function Lists() {
   return (
     <View style={styles.container}>
       <ScrollViewExample />

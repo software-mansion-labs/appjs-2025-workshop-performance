@@ -13,7 +13,7 @@ import {
 } from '@react-navigation/native';
 
 import Empty from './examples/Empty/Empty';
-import {Lists} from './examples/Lists/Lists';
+import Lists from './examples/Lists/Lists';
 import Maps from './examples/Maps/Maps';
 import Native from './examples/Native/Native';
 import Fps from './examples/Fps/Fps';
