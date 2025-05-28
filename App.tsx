@@ -12,7 +12,8 @@ import {
   ParamListBase,
 } from '@react-navigation/native';
 
-import {Lists} from './examples/Lists/Lists';
+import Empty from './examples/Empty/Empty';
+import Lists from './examples/Lists/Lists';
 import Maps from './examples/Maps/Maps';
 import Native from './examples/Native/Native';
 import Fps from './examples/Fps/Fps';
@@ -27,6 +28,7 @@ import BlurHashThumbHash from './examples/BlurHashThumbHash/BlurHashThumbHash';
 import {useMMKVObject} from 'react-native-mmkv';
 import Persistence from './examples/Persistence/Persistence';
 import AnimatedSvg from './examples/AnimatedSvg/AnimatedSvg';
+import Screens from './examples/Screens/Screens';
 import CompilerPlayground from './examples/CompilerPlayground/CompilerPlayground';
 
 declare global {
@@ -38,6 +40,11 @@ declare global {
 const Stack = createNativeStackNavigator();
 const screens = [
   {
+    icon: '👻',
+    name: 'Empty',
+    screen: Empty,
+  },
+  {
     icon: '📜',
     name: 'Lists',
     screen: Lists,
@@ -46,6 +53,11 @@ const screens = [
     icon: '🗺️',
     name: 'Maps',
     screen: Maps,
+  },
+  {
+    icon: '📺',
+    name: 'Screens',
+    screen: Screens,
   },
   {
     icon: '📱',
