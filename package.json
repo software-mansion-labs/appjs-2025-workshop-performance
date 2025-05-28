@@ -48,6 +48,7 @@
     "@types/react": "^19.0.0",
     "@types/react-test-renderer": "^19.0.0",
     "babel-plugin-inline-import": "^3.0.0",
+    "babel-plugin-react-compiler": "^19.1.0-rc.2",
     "eslint": "^8.19.0",
     "expo-atlas": "^0.4.0",
     "expo-atlas-without-expo": "^1.0.1",
