@@ -29,6 +29,7 @@ import {useMMKVObject} from 'react-native-mmkv';
 import Persistence from './examples/Persistence/Persistence';
 import AnimatedSvg from './examples/AnimatedSvg/AnimatedSvg';
 import Screens from './examples/Screens/Screens';
+import Rerenders from './examples/Rerenders/Rerenders';
 import ReactCompiler from './examples/ReactCompiler/ReactCompiler';
 
 declare global {
@@ -118,6 +119,11 @@ const screens = [
     icon: '💾',
     name: 'Persistence',
     screen: Persistence,
+  },
+  {
+    icon: '🔄',
+    name: 'Rerenders',
+    screen: Rerenders,
   },
   {
     icon: '🔧',
