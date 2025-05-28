@@ -28,6 +28,7 @@ import BlurHashThumbHash from './examples/BlurHashThumbHash/BlurHashThumbHash';
 import {useMMKVObject} from 'react-native-mmkv';
 import Persistence from './examples/Persistence/Persistence';
 import AnimatedSvg from './examples/AnimatedSvg/AnimatedSvg';
+import Screens from './examples/Screens/Screens';
 
 declare global {
   var performance: {
@@ -51,6 +52,11 @@ const screens = [
     icon: '🗺️',
     name: 'Maps',
     screen: Maps,
+  },
+  {
+    icon: '📺',
+    name: 'Screens',
+    screen: Screens,
   },
   {
     icon: '📱',
