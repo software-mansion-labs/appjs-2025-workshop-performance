@@ -22,7 +22,7 @@ export default function AnimatedSvg() {
   useEffect(() => {
     offset.value = 0;
     offset.value = withRepeat(
-      withTiming(30, {duration: 1000, easing: Easing.linear}),
+      withTiming(32, {duration: 1000, easing: Easing.linear}),
       -1,
       false,
     );
