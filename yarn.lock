@@ -1534,6 +1534,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/types@npm:^7.26.0":
+  version: 7.28.2
+  resolution: "@babel/types@npm:7.28.2"
+  dependencies:
+    "@babel/helper-string-parser": ^7.27.1
+    "@babel/helper-validator-identifier": ^7.27.1
+  checksum: 2218f0996d5fbadc4e3428c4c38f4ed403f0e2634e3089beba2c89783268c0c1d796a23e65f9f1ff8547b9061ae1a67691c76dc27d0b457e5fa9f2dd4e022e49
+  languageName: node
+  linkType: hard
+
 "@bcoe/v8-coverage@npm:^0.2.3":
   version: 0.2.3
   resolution: "@bcoe/v8-coverage@npm:0.2.3"
@@ -2939,17 +2949,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shopify/flash-list@npm:^2.0.0-alpha.11":
-  version: 2.0.0-alpha.11
-  resolution: "@shopify/flash-list@npm:2.0.0-alpha.11"
+"@shopify/flash-list@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@shopify/flash-list@npm:2.0.2"
   dependencies:
-    recyclerlistview: 4.2.3
     tslib: 2.8.1
   peerDependencies:
     "@babel/runtime": "*"
     react: "*"
     react-native: "*"
-  checksum: ba1fbd6caf7a897e44aad09c0c5d95592d849a45cf7da89ac3a565437119543679f13d8c88ddc4a7b61b31d99dc41dc3f5d7b9bcf63bb1f596bbe17d012603f2
+  checksum: cfb3a6528eb123632218b68ecea881a2866d56183427a91a5454e57cd053ef28a4d40c8a6c9fc2d36ad3d1af997eaad0e4fcd632de538c3b335065cf4f3dd8dc
   languageName: node
   linkType: hard
 
@@ -3640,12 +3649,13 @@ __metadata:
     "@react-native/typescript-config": 0.79.2
     "@react-navigation/native": ^7.1.9
     "@react-navigation/native-stack": ^7.3.13
-    "@shopify/flash-list": ^2.0.0-alpha.11
+    "@shopify/flash-list": ^2.0.2
     "@turf/helpers": ^7.2.0
     "@types/jest": ^29.5.13
     "@types/react": ^19.0.0
     "@types/react-test-renderer": ^19.0.0
     babel-plugin-inline-import: ^3.0.0
+    babel-plugin-react-compiler: ^19.1.0-rc.2
     eslint: ^8.19.0
     expo: ~53.0.0
     expo-atlas: ^0.4.0
@@ -4095,6 +4105,15 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.4.0 || ^8.0.0-0 <8.0.0
   checksum: f4d4a803834ffa72713579d696586d8cc654c0025cbd5ec775fc5d37faa00381dcb80e5b97d4b16059443352653585596d87848b5590b1d8670c235408e73fb3
+  languageName: node
+  linkType: hard
+
+"babel-plugin-react-compiler@npm:^19.1.0-rc.2":
+  version: 19.1.0-rc.2
+  resolution: "babel-plugin-react-compiler@npm:19.1.0-rc.2"
+  dependencies:
+    "@babel/types": ^7.26.0
+  checksum: cfb156ee8c5f18dda947e42139ccd6951c8d37a1d3ad88fed25e2dfd84bc90d19758e9763ba3b3a3cb92c5a49ee19eceaf936a4d1e280979ace5f0630e824e04
   languageName: node
   linkType: hard
 
@@ -8214,7 +8233,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.debounce@npm:4.0.8, lodash.debounce@npm:^4.0.8":
+"lodash.debounce@npm:^4.0.8":
   version: 4.0.8
   resolution: "lodash.debounce@npm:4.0.8"
   checksum: a3f527d22c548f43ae31c861ada88b2637eb48ac6aa3eb56e82d44917971b8aa96fbb37aa60efea674dc4ee8c42074f90f7b1f772e9db375435f6c83a19b3bc6
@@ -9628,7 +9647,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:15.8.1, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -10095,20 +10114,6 @@ __metadata:
     string_decoder: ^1.1.1
     util-deprecate: ^1.0.1
   checksum: bdcbe6c22e846b6af075e32cf8f4751c2576238c5043169a1c221c92ee2878458a816a4ea33f4c67623c0b6827c8a400409bfb3cf0bf3381392d0b1dfb52ac8d
-  languageName: node
-  linkType: hard
-
-"recyclerlistview@npm:4.2.3":
-  version: 4.2.3
-  resolution: "recyclerlistview@npm:4.2.3"
-  dependencies:
-    lodash.debounce: 4.0.8
-    prop-types: 15.8.1
-    ts-object-utils: 0.0.5
-  peerDependencies:
-    react: ">= 15.2.1"
-    react-native: ">= 0.30.0"
-  checksum: 847c00bdc7e22178cc20b58b8da215fb2f3f69a4edffd41db97038d0f9eb1475340793e11025f6cc160d3452967ab5724db3896920ba77d2da5208276328254f
   languageName: node
   linkType: hard
 
@@ -11384,13 +11389,6 @@ __metadata:
   version: 0.1.13
   resolution: "ts-interface-checker@npm:0.1.13"
   checksum: 20c29189c2dd6067a8775e07823ddf8d59a33e2ffc47a1bd59a5cb28bb0121a2969a816d5e77eda2ed85b18171aa5d1c4005a6b88ae8499ec7cc49f78571cb5e
-  languageName: node
-  linkType: hard
-
-"ts-object-utils@npm:0.0.5":
-  version: 0.0.5
-  resolution: "ts-object-utils@npm:0.0.5"
-  checksum: 83c48fbdaba392fb2c01cea53b267ed5538d2bb44fc6c3eecc10bcfabc1780bfa6ec8569b52bbf0140d9b521d9049d5f15884e12286918244d463d854dbc73cb
   languageName: node
   linkType: hard
 
