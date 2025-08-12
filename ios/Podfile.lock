@@ -1945,7 +1945,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNReanimated (4.0.0-beta.4):
+  - RNReanimated (4.0.2):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1968,10 +1968,10 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNReanimated/reanimated (= 4.0.0-beta.4)
+    - RNReanimated/reanimated (= 4.0.2)
     - RNWorklets
     - Yoga
-  - RNReanimated/reanimated (4.0.0-beta.4):
+  - RNReanimated/reanimated (4.0.2):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1994,36 +1994,10 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNReanimated/reanimated/apple (= 4.0.0-beta.4)
-    - RNReanimated/reanimated/view (= 4.0.0-beta.4)
+    - RNReanimated/reanimated/apple (= 4.0.2)
     - RNWorklets
     - Yoga
-  - RNReanimated/reanimated/apple (4.0.0-beta.4):
-    - DoubleConversion
-    - glog
-    - hermes-engine
-    - RCT-Folly (= 2024.11.18.00)
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Core
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-hermes
-    - React-ImageManager
-    - React-jsi
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-renderercss
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - RNWorklets
-    - Yoga
-  - RNReanimated/reanimated/view (4.0.0-beta.4):
+  - RNReanimated/reanimated/apple (4.0.2):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2148,7 +2122,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNWorklets (0.3.0):
+  - RNWorklets (0.4.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2171,9 +2145,9 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNWorklets/worklets (= 0.3.0)
+    - RNWorklets/worklets (= 0.4.1)
     - Yoga
-  - RNWorklets/worklets (0.3.0):
+  - RNWorklets/worklets (0.4.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2196,9 +2170,9 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
-    - RNWorklets/worklets/apple (= 0.3.0)
+    - RNWorklets/worklets/apple (= 0.4.1)
     - Yoga
-  - RNWorklets/worklets/apple (0.3.0):
+  - RNWorklets/worklets/apple (0.4.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2605,10 +2579,10 @@ SPEC CHECKSUMS:
   ReactCommon: 4d0da92a5eb8da86c08e3ec34bd23ab439fb2461
   RNCAsyncStorage: c1bbcf629d7206d1e19310827848b98d68a4cbaf
   RNGestureHandler: 5d8431415d4b8518e86e289e9ad5bb9be78f6dba
-  RNReanimated: 4e882bbb99c0fcd55913012157b6a109a59f9e79
+  RNReanimated: 1909c549d12e6403209f0749d74d2089ac6426b7
   RNScreens: c5c07a86e4088ce92f0d3854082250dfa9c61f75
   RNSVG: 50819276c95d91ccd8fbe5cfea7e09a416c9beaa
-  RNWorklets: 1de62f66968ec5d2f8e6db3bfe3c206ad400cead
+  RNWorklets: e2d664cd9eb7836a8047fea8e87244ab599aab20
   SDWebImage: f84b0feeb08d2d11e6a9b843cb06d75ebf5b8868
   SDWebImageAVIFCoder: 00310d246aab3232ce77f1d8f0076f8c4b021d90
   SDWebImageSVGCoder: 15a300a97ec1c8ac958f009c02220ac0402e936c
