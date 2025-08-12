@@ -2346,15 +2346,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@legendapp/list@npm:^1.0.13":
-  version: 1.0.13
-  resolution: "@legendapp/list@npm:1.0.13"
+"@legendapp/list@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "@legendapp/list@npm:1.1.4"
   dependencies:
     use-sync-external-store: ^1.5.0
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: c0b961999b62d403bc2edbcfd0151f1f8939ca4cf91dbece22c48ed41e5753a90cd66685a6874784f648dd9451118b5b1524ef6385a4fb4b7210d94f40b17765
+  checksum: c4b08b0ab8298d3f4e98e83310266e65b2741300a480a8d103fc1af8f3a6b4e7f4439394c994658a18df7c3c23fccae81b2ecf7da47ed615c860100792d98190
   languageName: node
   linkType: hard
 
@@ -3637,7 +3637,7 @@ __metadata:
     "@babel/core": ^7.25.2
     "@babel/preset-env": ^7.25.3
     "@babel/runtime": ^7.25.0
-    "@legendapp/list": ^1.0.13
+    "@legendapp/list": ^1.1.4
     "@maplibre/maplibre-react-native": ^10.1.4
     "@react-native-async-storage/async-storage": ^2.1.2
     "@react-native-community/cli": 18.0.0
